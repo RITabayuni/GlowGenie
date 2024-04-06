@@ -6,7 +6,7 @@
         android:title="Home"
         android:icon="@drawable/ic_home" />
 
-    <item
+     <item
         android:id="@+id/shop"
         android:title="Shop"
         android:icon="@drawable/ic_cart"/>
@@ -14,7 +14,7 @@
     <item
         android:id="@+id/reels"
         android:title=""
-        android:enabled="true"/>
+        android:enabled="false"/>
 
     <item
         android:id="@+id/message"
