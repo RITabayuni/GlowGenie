@@ -2,7 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.GlowGenie" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-<!--         <item name="colorPrimary">@color/UnguGenie</item>-->
+         <item name="colorPrimary">@color/UnguGenie</item>
+        <item name="colorPrimaryVariant">@color/buttonCommunity</item>
     </style>
 
     <style name="Theme.GlowGenie" parent="Base.Theme.GlowGenie" />
