@@ -16,6 +16,15 @@
             android:name=".Appoinment"
             android:exported="false" />
         <activity
+            android:name=".CommunityList"
+            android:exported="false" />
+        <activity
+            android:name=".CommunityDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Community1"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
