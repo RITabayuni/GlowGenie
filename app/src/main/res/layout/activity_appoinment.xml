@@ -572,4 +572,7 @@
 
     </androidx.cardview.widget.CardView>
 
+    <include
+        layout="@layout/navbar1"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
