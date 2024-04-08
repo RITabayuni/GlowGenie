@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Appoinment2">
+    tools:context=".Appoinment3">
 
     <View
         android:id="@+id/header"
@@ -135,19 +135,12 @@
                     android:layout_marginStart="5dp"
                     android:padding="0dp"
                     android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/white"
                     android:text="Chat"
-                    android:textColor="@color/black"
                     android:textAllCaps="false"
                     android:textSize="20sp"
-                    android:background="@drawable/bg_btn_chat_grey" />
+                    android:background="@drawable/bg_btn_chat_purple" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="chat will begin in 09.00"
-                    android:textColor="#FF0000"
-                    android:textSize="12sp"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -182,7 +175,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_marginStart="25dp">
-                
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -308,6 +301,4 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

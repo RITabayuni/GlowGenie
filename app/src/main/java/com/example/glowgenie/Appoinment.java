@@ -25,11 +25,11 @@ public class Appoinment extends AppCompatActivity {
             return insets;
         });
 
-        CardView cvToday = findViewById(R.id.cv_today);
+        cvToday = findViewById(R.id.cv_today);
         cvToday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent I = new Intent(Appoinment.this, Appoinment2.class);
+                Intent I = new Intent(Appoinment.this, Appoinment3.class);
                 startActivity(I);
             }
         });
