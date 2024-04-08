@@ -12,7 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Appoinment3 extends AppCompatActivity {
+public class Appointment3 extends AppCompatActivity {
     ImageView iconBack;
     Button btnChat;
 
@@ -20,7 +20,7 @@ public class Appoinment3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_appoinment3);
+        setContentView(R.layout.activity_appointment3);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -31,7 +31,7 @@ public class Appoinment3 extends AppCompatActivity {
         iconBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent I = new Intent(Appoinment3.this, Appoinment.class);
+                Intent I = new Intent(Appointment3.this, Appointment.class);
                 startActivity(I);
             }
         });
@@ -40,7 +40,7 @@ public class Appoinment3 extends AppCompatActivity {
         btnChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent I = new Intent(Appoinment3.this, ChatAppoinment.class);
+                Intent I = new Intent(Appointment3.this, ChatAppointment.class);
                 startActivity(I);
             }
         });
