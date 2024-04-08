@@ -13,19 +13,22 @@
         android:theme="@style/Theme.GlowGenie"
         tools:targetApi="31">
         <activity
-            android:name=".Booking"
-            android:exported="false" />
-        <activity
-            android:name=".FindDoctor"
+            android:name=".CommunityDetail"
             android:exported="false" />
         <activity
             android:name=".CommunityList"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Community1"
             android:exported="false" />
         <activity
-            android:name=".Community1"
+            android:name=".Appoinment2"
+            android:exported="false" />
+        <activity
+            android:name=".Appoinment"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

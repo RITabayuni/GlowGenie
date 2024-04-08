@@ -85,9 +85,9 @@
 
     <ImageView
         android:id="@+id/ivCommunity1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/img_community1"
+        android:layout_width="160dp"
+        android:layout_height="250dp"
+        android:src="@drawable/display_com1"
         android:layout_marginStart="30dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
@@ -96,9 +96,9 @@
 
     <ImageView
         android:id="@+id/ivCommunity2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/community2"
+        android:layout_width="160dp"
+        android:layout_height="250dp"
+        android:src="@drawable/display_com2"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="5dp"
@@ -260,13 +260,13 @@
 
                 <ImageView
                     android:id="@+id/profileDiscuss"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="31dp"
+                    android:layout_height="34dp"
                     android:layout_marginEnd="20dp"
                     android:src="@drawable/profile_com"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/user"
