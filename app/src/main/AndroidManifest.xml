@@ -19,10 +19,16 @@
             android:name=".CommunityList"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Community1"
             android:exported="false" />
         <activity
-            android:name=".Community1"
+            android:name=".Appoinment2"
+            android:exported="false" />
+        <activity
+            android:name=".Appoinment"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
