@@ -120,7 +120,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginStart="20dp"
-        android:src="@drawable/user"
+        android:src="@drawable/profile_com"
         app:layout_constraintTop_toTopOf="@+id/bodyTimeline"
         app:layout_constraintStart_toStartOf="@+id/bodyTimeline"/>
 
@@ -244,7 +244,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginStart="20dp"
-        android:src="@drawable/user"
+        android:src="@drawable/profile_com"
         app:layout_constraintTop_toBottomOf="@+id/likeAndComment"
         app:layout_constraintStart_toStartOf="@+id/bodyTimeline"/>
 
