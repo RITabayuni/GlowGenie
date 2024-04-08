@@ -346,8 +346,8 @@
 
                     <ImageView
                         android:id="@+id/clock_icon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/clock"
                         android:layout_marginEnd="10dp"/>
 
@@ -456,8 +456,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_marginEnd="10dp"
                         android:src="@drawable/clock" />
 
@@ -553,8 +553,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_marginEnd="10dp"
                         android:src="@drawable/clock" />
 
