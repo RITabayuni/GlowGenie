@@ -81,7 +81,7 @@
 
 
     <include
-        layout="@layout/navbar1"/>
+        layout="@layout/layout_navbar"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
