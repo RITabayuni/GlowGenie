@@ -13,6 +13,18 @@
         android:theme="@style/Theme.GlowGenie"
         tools:targetApi="31">
         <activity
+            android:name=".AppointmentHistory"
+            android:exported="false" />
+        <activity
+            android:name=".Rating"
+            android:exported="false" />
+        <activity
+            android:name=".ChatConsultation"
+            android:exported="false" />
+        <activity
+            android:name=".Appointment3"
+            android:exported="false" />
+        <activity
             android:name=".CommunityDetail"
             android:exported="false" />
         <activity
@@ -22,17 +34,22 @@
             android:name=".Community1"
             android:exported="false" />
         <activity
-            android:name=".Appoinment2"
+            android:name=".Appointment2"
             android:exported="false" />
         <activity
-            android:name=".Appoinment"
+            android:name=".FindDoctor"
+            android:exported="false" />
+        <activity
+            android:name=".Booking"
+            android:exported="false" />
+        <activity
+            android:name=".BookingPayment"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
