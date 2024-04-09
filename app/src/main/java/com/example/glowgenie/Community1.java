@@ -18,6 +18,8 @@ public class Community1 extends AppCompatActivity implements View.OnClickListene
     TextView seeMore;
     Button join1, join2;
 
+    ImageView home;
+    TextView judulContent1, judulContent2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +34,14 @@ public class Community1 extends AppCompatActivity implements View.OnClickListene
         seeMore = findViewById(R.id.seeMore);
         join1 = findViewById(R.id.join);
         join2 = findViewById(R.id.join2);
+        judulContent1 = findViewById(R.id.judulContent);
+        judulContent2 = findViewById(R.id.judulContent2);
+        home = findViewById(R.id.home);
 
         seeMore.setOnClickListener(this);
         join1.setOnClickListener(this);
         join2.setOnClickListener(this);
+        home.setOnClickListener(view -> this.finish());
 
     }
 
@@ -45,9 +51,15 @@ public class Community1 extends AppCompatActivity implements View.OnClickListene
             Intent intent = new Intent(Community1.this, CommunityList.class);
             startActivity(intent);
         }
-
-        if (v.getId() == join1.getId() || v.getId() == join2.getId()){
+        if (v.getId() == join1.getId()){
+            String judul1 = judulContent1.getText().toString();
             Intent intent = new Intent(Community1.this, CommunityDetail.class);
+            intent.putExtra("judul", judul1);
+            startActivity(intent);
+        } else if (v.getId() == join2.getId()){
+            String judul2 = judulContent2.getText().toString();
+            Intent intent = new Intent(Community1.this, CommunityDetail.class);
+            intent.putExtra("judul", judul2);
             startActivity(intent);
         }
     }

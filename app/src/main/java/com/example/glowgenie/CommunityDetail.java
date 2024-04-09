@@ -1,6 +1,9 @@
 package com.example.glowgenie;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class CommunityDetail extends AppCompatActivity {
 
+    TextView namaCommunity;
+    ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,5 +27,14 @@ public class CommunityDetail extends AppCompatActivity {
             return insets;
         });
 
+
+        Intent intent = getIntent();
+        String judul = intent.getStringExtra("judul");
+
+        namaCommunity = findViewById(R.id.judul);
+        namaCommunity.setText(judul);
+
+        back = findViewById(R.id.back);
+        back.setOnClickListener(view -> this.finish());
     }
 }

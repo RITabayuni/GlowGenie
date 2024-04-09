@@ -1,6 +1,10 @@
 package com.example.glowgenie;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.CalendarView;
+import android.widget.RelativeLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,8 +12,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    RelativeLayout community;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,5 +26,15 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        community = findViewById(R.id.community);
+        community.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == community.getId()){
+            Intent intent = new Intent(MainActivity.this, Community1.class);
+            startActivity(intent);
+        }
     }
 }
