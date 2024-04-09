@@ -13,7 +13,10 @@
         android:theme="@style/Theme.GlowGenie"
         tools:targetApi="31">
         <activity
-            android:name=".BookingPayment"
+            android:name=".ChatAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".Appointment3"
             android:exported="false" />
         <activity
             android:name=".CommunityDetail"
@@ -25,16 +28,10 @@
             android:name=".Community1"
             android:exported="false" />
         <activity
-            android:name=".Appoinment2"
+            android:name=".Appointment2"
             android:exported="false" />
         <activity
-            android:name=".Appoinment"
-            android:exported="false" />
-        <activity
-            android:name=".Booking"
-            android:exported="false" />
-        <activity
-            android:name=".FindDoctor"
+            android:name=".Appointment"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
