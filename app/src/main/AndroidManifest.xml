@@ -13,7 +13,13 @@
         android:theme="@style/Theme.GlowGenie"
         tools:targetApi="31">
         <activity
-            android:name=".ChatAppointment"
+            android:name=".AppointmentHistory"
+            android:exported="false" />
+        <activity
+            android:name=".Rating"
+            android:exported="false" />
+        <activity
+            android:name=".ChatConsultation"
             android:exported="false" />
         <activity
             android:name=".Appointment3"

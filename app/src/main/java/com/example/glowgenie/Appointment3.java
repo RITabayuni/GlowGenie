@@ -40,7 +40,7 @@ public class Appointment3 extends AppCompatActivity {
         btnChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent I = new Intent(Appointment3.this, ChatAppointment.class);
+                Intent I = new Intent(Appointment3.this, ChatConsultation.class);
                 startActivity(I);
             }
         });
