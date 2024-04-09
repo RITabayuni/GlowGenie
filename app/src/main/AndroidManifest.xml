@@ -37,14 +37,19 @@
             android:name=".Appointment2"
             android:exported="false" />
         <activity
-            android:name=".Appointment"
+            android:name=".FindDoctor"
+            android:exported="false" />
+        <activity
+            android:name=".Booking"
+            android:exported="false" />
+        <activity
+            android:name=".BookingPayment"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

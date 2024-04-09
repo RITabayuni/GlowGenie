@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookingPayment"
+    >
+
+    <View
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@drawable/bg_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/doctor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintTop_toTopOf="@+id/header">
+
+        <ImageView
+            android:id="@+id/doctor_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/profile_b" />
+
+        <TextView
+            android:id="@+id/doctor_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_bold"
+            android:padding="20dp"
+            android:text="Dr. Cameron Williamson"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="3dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
+
+        <TextView
+            android:id="@+id/book_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Book Appointments"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="March 2024"
+        android:textColor="#7B1FA2"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <LinearLayout
+        android:id="@+id/date_layout"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_month">
+
+        <LinearLayout
+            android:id="@+id/day1_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal|center_vertical">
+
+            <TextView
+                android:id="@+id/day1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Thu"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:paddingRight="20dp"/>
+            <TextView
+                android:id="@+id/day2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Fri"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:paddingRight="20dp"/>
+            <TextView
+                android:id="@+id/day3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Sat"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:paddingRight="20dp"/>
+            <TextView
+                android:id="@+id/day4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Sun"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:paddingRight="20dp"/>
+            <TextView
+                android:id="@+id/day5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Mon"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:paddingRight="20dp"/>
+            <TextView
+                android:id="@+id/day6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Tue"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:paddingRight="20dp"/>
+            <TextView
+                android:id="@+id/day7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Thu"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <RadioGroup
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/date_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/button_color_b2"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="11"
+                android:textColor="@color/black" />
+
+
+            <RadioButton
+                android:id="@+id/date_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/button_color_b2"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="12"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/date_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/button_color_b2"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="13"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/date_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_color_b2"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:layout_marginEnd="25dp"
+                android:text="14"
+                android:textColor="@color/black"
+                />
+            <RadioButton
+                android:id="@+id/date_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_color_b2"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:layout_marginEnd="25dp"
+                android:text="15"
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/date_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_color_b2"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="16"
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/date_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_color_b2"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="17"
+                android:textColor="@color/black"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/booking_details"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_layout"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_layout">
+
+        <TextView
+            android:id="@+id/morning_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Morning"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/date_layout"
+            tools:layout_editor_absoluteX="155dp" />
+
+        <RadioGroup
+            android:id="@+id/schedule_m"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/list_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/button_color_b"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="08.00 am"
+                android:textColor="@color/black" />
+
+
+            <RadioButton
+                android:id="@+id/list_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/button_color_b"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="09.00 am"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/list_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/button_color_b"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="10.00 am"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/list_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_color_b"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="11.00 am"
+                android:textColor="@color/black" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/Appointment_evening"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Evening"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/date_layout"
+            tools:layout_editor_absoluteX="155dp" />
+
+        <RadioGroup
+            android:id="@+id/schedule_e"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/list_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/button_color_b"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="01.00 pm"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/list_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/button_color_b"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="01.30 pm"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/list_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/button_color_b"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="02.00 pm"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/list_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_color_b"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
+                android:text="03.00 pm"
+                android:textColor="@color/black" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/type_appointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Via Consultation"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/date_layout"
+            tools:layout_editor_absoluteX="155dp" />
+
+        <RadioGroup
+            android:id="@+id/via_consultation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_button_b4"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            android:padding="7dp">
+
+            <RadioButton
+                android:id="@+id/type_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/button_color_b2"
+                android:button="@drawable/ic_vc"
+                android:fontFamily="@font/poppins_light"
+                android:padding="10dp"
+                android:text="Video Call"
+                android:textColor="@color/black" />
+
+
+            <RadioButton
+                android:id="@+id/type_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/button_color_b2"
+                android:button="@drawable/ic_chat"
+                android:fontFamily="@font/poppins_light"
+                android:padding="10dp"
+                android:text="Chat"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/type_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/button_color_b2"
+                android:button="@drawable/ic_phone"
+                android:fontFamily="@font/poppins_light"
+                android:padding="10dp"
+                android:text="Call"
+                android:textColor="@color/black" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Payment"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/date_layout"
+            tools:layout_editor_absoluteX="155dp" />
+
+        <RadioGroup
+            android:id="@+id/payment_type"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:elevation="10dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/dana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/bg_button_b4"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/payment4"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="48dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Your Balance: Rp200.000"
+                    android:textColor="@color/black"/>
+                <RadioButton
+                    android:id="@+id/payment1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button_b4"
+                    android:checked="false"
+                    >
+                </RadioButton>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gopay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/bg_button_b4"
+                android:gravity="center_vertical|center_horizontal">>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/payment1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="50dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Your Balance: Rp200.000"
+                    android:textColor="@color/black"/>
+                <RadioButton
+                    android:id="@+id/payment2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button_b4"
+                    android:checked="false"
+                    >
+                </RadioButton>
+            </LinearLayout>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/bt_book_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_button_b" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/navbar1"/>
+
+    <RelativeLayout
+        android:id="@+id/popup_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="invisible"
+        android:gravity="center_vertical|center_horizontal"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="300dp"
+            android:background="@drawable/bg_popup_b"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:text="Are you sure you want to book this Appointment?"
+                android:textColor="#7B1FA2"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="18sp" />
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/btn_yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_button_b"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="YES"
+                    android:textColor="@color/white" />
+                <Button
+                    android:id="@+id/btn_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/bg_button_b2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="NO"
+                    android:textColor="#7B1FA2" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/popup_success"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="invisible"
+        android:gravity="center_vertical|center_horizontal"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="350dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="350dp"
+            android:background="@drawable/bg_popup_b"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:text="Your booking has been successfully made"
+                android:textColor="#7B1FA2"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
