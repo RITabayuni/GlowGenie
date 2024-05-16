@@ -1,4 +1,4 @@
-package com.example.glowgenie;
+package com.example.glowgenie.reels;
 
 
 public class Video {

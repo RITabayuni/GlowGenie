@@ -1,4 +1,4 @@
-package com.example.glowgenie;
+package com.example.glowgenie.reels;
 
 
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
+
+import com.example.glowgenie.R;
 
 import java.util.ArrayList;
 import java.util.List;

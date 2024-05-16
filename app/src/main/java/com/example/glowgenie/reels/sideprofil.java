@@ -1,4 +1,4 @@
-package com.example.glowgenie;
+package com.example.glowgenie.reels;
 
 
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.glowgenie.R;
 
 public class sideprofil extends AppCompatActivity {
 

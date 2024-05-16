@@ -13,6 +13,12 @@
         android:theme="@style/Theme.GlowGenie"
         tools:targetApi="31">
         <activity
+            android:name=".reels.activityreels"
+            android:exported="false" />
+        <activity
+            android:name=".reels.sideprofil"
+            android:exported="false" />
+        <activity
             android:name=".appointment.AppointmentHistory"
             android:exported="false" />
         <activity
@@ -46,10 +52,10 @@
             android:name=".booking.BookingPayment"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".appointment.Appointment"
             android:exported="false" />
         <activity
-            android:name=".appointment.Appointment"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

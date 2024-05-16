@@ -1,4 +1,4 @@
-package com.example.glowgenie;
+package com.example.glowgenie.reels;
 
 
 import android.media.MediaPlayer;
@@ -10,6 +10,8 @@ import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.glowgenie.R;
 
 import java.util.List;
 
