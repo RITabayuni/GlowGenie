@@ -1,4 +1,4 @@
-package com.example.glowgenie;
+package com.example.glowgenie.appointment;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,6 +19,8 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.glowgenie.R;
 
 public class ChatConsultation extends AppCompatActivity {
     ImageView iconBack;

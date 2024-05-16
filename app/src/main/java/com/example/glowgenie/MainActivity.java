@@ -3,7 +3,6 @@ package com.example.glowgenie;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CalendarView;
 import android.widget.RelativeLayout;
 
 import androidx.activity.EdgeToEdge;
@@ -11,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.glowgenie.community.Community1;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
