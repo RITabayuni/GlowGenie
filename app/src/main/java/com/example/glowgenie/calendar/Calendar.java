@@ -14,8 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.glowgenie.R;
 
 public class Calendar extends AppCompatActivity {
-    private LinearLayout btn_layout;
-
+    LinearLayout btn_layout, date19;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +28,15 @@ public class Calendar extends AppCompatActivity {
 
         btn_layout = findViewById(R.id.btn_lay);
         btn_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Calendar.this,Calendar2.class));
+            }
+        });
+
+        date19 = findViewById(R.id.date19);
+
+        date19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Calendar.this,Calendar2.class));
