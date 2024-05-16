@@ -13,31 +13,49 @@
         android:theme="@style/Theme.GlowGenie"
         tools:targetApi="31">
         <activity
-            android:name=".ChatAppointment"
+            android:name=".calendar.Calendar2"
             android:exported="false" />
         <activity
-            android:name=".Appointment3"
+            android:name=".calendar.Calendar"
             android:exported="false" />
         <activity
-            android:name=".CommunityDetail"
+            android:name=".reels.activityreels"
             android:exported="false" />
         <activity
-            android:name=".CommunityList"
+            android:name=".reels.sideprofil"
             android:exported="false" />
         <activity
-            android:name=".Community1"
+            android:name=".appointment.AppointmentHistory"
             android:exported="false" />
         <activity
-            android:name=".Appointment2"
+            android:name=".appointment.Rating"
             android:exported="false" />
         <activity
-            android:name=".FindDoctor"
+            android:name=".appointment.ChatConsultation"
             android:exported="false" />
         <activity
-            android:name=".Booking"
+            android:name=".appointment.Appointment3"
             android:exported="false" />
         <activity
-            android:name=".BookingPayment"
+            android:name=".community.CommunityDetail"
+            android:exported="false" />
+        <activity
+            android:name=".community.CommunityList"
+            android:exported="false" />
+        <activity
+            android:name=".community.Community1"
+            android:exported="false" />
+        <activity
+            android:name=".appointment.Appointment2"
+            android:exported="false" />
+        <activity
+            android:name=".booking.FindDoctor"
+            android:exported="false" />
+        <activity
+            android:name=".booking.Booking"
+            android:exported="false" />
+        <activity
+            android:name=".booking.BookingPayment"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
