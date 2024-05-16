@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#A137CD"
     android:backgroundTint="#A137CD"
-    tools:context=".Calendar">
+    tools:context=".calendar.Calendar">
 
     <LinearLayout
         android:id="@+id/linearLayout"
