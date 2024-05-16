@@ -58,6 +58,18 @@
             app:layout_constraintStart_toStartOf="@+id/header"
             app:layout_constraintEnd_toEndOf="@+id/header" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
     <HorizontalScrollView
         android:id="@+id/article"
         android:layout_width="match_parent"
@@ -362,48 +374,419 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/calendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calendar"
-        android:textSize="18dp"
-        android:fontFamily="@font/poppins_regular"
-        android:textStyle="bold"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/tabMenu"
-        app:layout_constraintStart_toStartOf="parent"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/seeMore"
-        android:fontFamily="@font/poppins_regular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="see more"
-        android:textStyle="bold"
-        android:layout_marginTop="15dp"
-        android:clickable="true"
-        android:layout_marginEnd="40dp"
-        android:textColor="@color/UnguGenie"
-        app:layout_constraintTop_toBottomOf="@+id/tabMenu"
-        app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Calendar"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textStyle="bold"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/seeMore"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="see more"
+                    android:textStyle="bold"
+                    android:layout_marginTop="15dp"
+                    android:clickable="true"
+                    android:layout_marginEnd="40dp"
+                    android:textColor="@color/UnguGenie" />
+
+            </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/calendar">
-
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:background="@drawable/bg_calendar" />
-
     </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/popular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Popular"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textStyle="bold"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/seeMore2"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="see more"
+                    android:textStyle="bold"
+                    android:layout_marginTop="15dp"
+                    android:clickable="true"
+                    android:layout_marginEnd="40dp"
+                    android:textColor="@color/UnguGenie" />
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/popular_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@+id/header"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:paddingBottom="90dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/product1"
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="30dp"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="4dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgProduct1"
+                                        android:layout_width="150dp"
+                                        android:layout_height="120dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/skintific" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Skintific 5X Ceramide Barrier Moisturizer Gel 30g"
+                                        android:textSize="9sp"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:paddingLeft="5dp"/>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Tangerang Selatan"
+                                        android:textSize="8sp"
+                                        android:fontFamily="@font/poppins_light"
+                                        android:paddingLeft="5dp"/>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Rp 144.000"
+                                            android:textSize="10sp"
+                                            android:fontFamily="@font/poppins_bold"
+                                            android:paddingLeft="5dp"/>
+
+                                        <ImageView
+                                            android:id="@+id/starProd1"
+                                            android:layout_width="50dp"
+                                            android:layout_height="10dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginRight="5dp"
+                                            android:background="@drawable/stars4"/>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/product2"
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="4dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgProduct2"
+                                        android:layout_width="150dp"
+                                        android:layout_height="120dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/sunscreen" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Facetology Sunscreen Triple Care Invisible UVA UVB &amp; Blue Light"
+                                        android:textSize="9sp"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:paddingLeft="5dp"/>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Tangerang Selatan"
+                                        android:textSize="8sp"
+                                        android:fontFamily="@font/poppins_light"
+                                        android:paddingLeft="5dp"/>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Rp 74.000"
+                                            android:textSize="10sp"
+                                            android:fontFamily="@font/poppins_bold"
+                                            android:paddingLeft="5dp"/>
+
+                                        <ImageView
+                                            android:id="@+id/starProd2"
+                                            android:layout_width="50dp"
+                                            android:layout_height="10dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginRight="5dp"
+                                            android:background="@drawable/stars4"/>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/product3"
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="4dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgProduct3"
+                                        android:layout_width="150dp"
+                                        android:layout_height="120dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/cosrx" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="COSRX Low pH Good Morning Gel Cleanser - 50ml"
+                                        android:textSize="9sp"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:paddingLeft="5dp"/>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Kab.Tangerang"
+                                        android:textSize="8sp"
+                                        android:fontFamily="@font/poppins_light"
+                                        android:paddingLeft="5dp"/>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Rp 102.000"
+                                            android:textSize="10sp"
+                                            android:fontFamily="@font/poppins_bold"
+                                            android:paddingLeft="5dp"/>
+
+                                        <ImageView
+                                            android:id="@+id/starProd3"
+                                            android:layout_width="50dp"
+                                            android:layout_height="10dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginRight="5dp"
+                                            android:background="@drawable/stars4"/>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/product4"
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="4dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgProduct4"
+                                        android:layout_width="150dp"
+                                        android:layout_height="120dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/cetaphil" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Cetaphil Gentle Skin Cleanser \n- 437 ml"
+                                        android:textSize="9sp"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:paddingLeft="5dp"/>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Tangerang Selatan"
+                                        android:textSize="8sp"
+                                        android:fontFamily="@font/poppins_light"
+                                        android:paddingLeft="5dp"/>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Rp 270.000"
+                                            android:textSize="10sp"
+                                            android:fontFamily="@font/poppins_bold"
+                                            android:paddingLeft="5dp"/>
+
+                                        <ImageView
+                                            android:id="@+id/starProd4"
+                                            android:layout_width="50dp"
+                                            android:layout_height="10dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginRight="5dp"
+                                            android:background="@drawable/stars4"/>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/product5"
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="4dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imgProduct5"
+                                        android:layout_width="150dp"
+                                        android:layout_height="120dp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/you" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="YOU Radiance Glow Advance \nDay Cream"
+                                        android:textSize="9sp"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:paddingLeft="5dp"/>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Kab. Tangerang"
+                                        android:textSize="8sp"
+                                        android:fontFamily="@font/poppins_light"
+                                        android:paddingLeft="5dp"/>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Rp 93.500"
+                                            android:textSize="10sp"
+                                            android:fontFamily="@font/poppins_bold"
+                                            android:paddingLeft="5dp"/>
+
+                                        <ImageView
+                                            android:id="@+id/starProd5"
+                                            android:layout_width="50dp"
+                                            android:layout_height="10dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginRight="5dp"
+                                            android:background="@drawable/stars4"/>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+
     <include
         layout="@layout/navbar1" />
 
