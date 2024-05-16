@@ -13,37 +13,46 @@
         android:theme="@style/Theme.GlowGenie"
         tools:targetApi="31">
         <activity
-            android:name=".AppointmentHistory"
+            android:name=".reels.activityreels"
             android:exported="false" />
         <activity
-            android:name=".Rating"
+            android:name=".reels.sideprofil"
             android:exported="false" />
         <activity
-            android:name=".ChatConsultation"
+            android:name=".appointment.AppointmentHistory"
             android:exported="false" />
         <activity
-            android:name=".Appointment3"
+            android:name=".appointment.Rating"
             android:exported="false" />
         <activity
-            android:name=".CommunityDetail"
+            android:name=".appointment.ChatConsultation"
             android:exported="false" />
         <activity
-            android:name=".CommunityList"
+            android:name=".appointment.Appointment3"
             android:exported="false" />
         <activity
-            android:name=".Community1"
+            android:name=".community.CommunityDetail"
             android:exported="false" />
         <activity
-            android:name=".Appointment2"
+            android:name=".community.CommunityList"
             android:exported="false" />
         <activity
-            android:name=".FindDoctor"
+            android:name=".community.Community1"
             android:exported="false" />
         <activity
-            android:name=".Booking"
+            android:name=".appointment.Appointment2"
             android:exported="false" />
         <activity
-            android:name=".BookingPayment"
+            android:name=".booking.FindDoctor"
+            android:exported="false" />
+        <activity
+            android:name=".booking.Booking"
+            android:exported="false" />
+        <activity
+            android:name=".booking.BookingPayment"
+            android:exported="false" />
+        <activity
+            android:name=".appointment.Appointment"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
