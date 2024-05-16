@@ -58,9 +58,6 @@
             android:name=".booking.BookingPayment"
             android:exported="false" />
         <activity
-            android:name=".appointment.Appointment"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

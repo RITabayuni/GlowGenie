@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginForm">
+
+    <View
+        android:id="@+id/header"
+        android:layout_width="409dp"
+        android:layout_height="522dp"
+        android:background="@drawable/bg_login"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <View
+        android:id="@+id/header2"
+        android:layout_width="409dp"
+        android:layout_height="519dp"
+        android:background="@drawable/bg_login_detail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/LoginCard"
+        android:layout_width="351dp"
+        android:layout_height="467dp"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/bg_loginn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Login"
+        android:textColor="@color/UnguGenie"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/LoginCard"
+        app:layout_constraintEnd_toEndOf="@+id/LoginCard"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/LoginCard"
+        app:layout_constraintTop_toTopOf="@+id/LoginCard"
+        app:layout_constraintVertical_bias="0.043" />
+
+
+    <LinearLayout
+        android:id="@+id/emailform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_rectangle_204"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/LoginCard"
+        app:layout_constraintStart_toStartOf="@+id/LoginCard"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Email"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toStartOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/passform" />
+
+        <EditText
+            android:id="@+id/inEmail"
+            android:layout_width="277dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:background="@null"
+            android:ems="10"
+            android:inputType="text"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="@+id/LoginCard"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            app:layout_constraintVertical_bias="0.758" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/passform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_rectangle_204"
+        app:layout_constraintEnd_toEndOf="@+id/LoginCard"
+        app:layout_constraintStart_toStartOf="@+id/LoginCard"
+        app:layout_constraintTop_toBottomOf="@+id/emailform"
+        android:gravity="center_vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Password"
+            android:layout_marginLeft="15dp"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toStartOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/passform" />
+
+        <EditText
+            android:id="@+id/inPass"
+            android:layout_width="277dp"
+            android:layout_height="25dp"
+            android:background="@null"
+            android:ems="10"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="@+id/LoginCard"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            app:layout_constraintVertical_bias="0.758" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_btn_reply"
+        android:backgroundTint="@color/UnguGenie"
+        android:fontFamily="@font/poppins_medium"
+        android:textAlignment="center"
+        android:text="Login"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/LoginCard"
+        app:layout_constraintEnd_toEndOf="@+id/LoginCard"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/LoginCard"
+        app:layout_constraintTop_toBottomOf="@+id/passform"
+        app:layout_constraintVertical_bias="0.237" />
+
+    <TextView
+        android:id="@+id/forgotpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="forgot password?"
+        android:fontFamily="@font/poppins_mediumitalic"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/bt_login"
+        app:layout_constraintEnd_toEndOf="@+id/LoginCard"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="@+id/LoginCard" />
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="or"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/LoginCard"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/LoginCard"
+        app:layout_constraintTop_toBottomOf="@+id/bt_login"
+        app:layout_constraintVertical_bias="0.607" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="102dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/LoginCard"
+        app:layout_constraintEnd_toEndOf="@+id/LoginCard"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/LoginCard"
+        app:layout_constraintTop_toBottomOf="@+id/bt_login"
+        app:layout_constraintVertical_bias="0.545">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/google" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="Log in with Google"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
