@@ -16,7 +16,6 @@ import com.example.glowgenie.R;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class AppointmentHistory extends AppCompatActivity {
     ImageView iconBack;
@@ -46,11 +45,11 @@ public class AppointmentHistory extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Initialize the data list
+
         appointmentHistoryList.add(new AppointmentHistoryModel("dr. Cameron Williamson", LocalDate.of(2024, 3, 17), "Inflamed acne, Post-inflammatory Erythema (PIE)", "Sore face", "Medi-klin gel 30g", R.drawable.doc_a1, R.drawable.stars));
 
 
-        // Initialize the adapter and set it to the RecyclerView
+
         appointmentHistoryAdapter = new AppointmentHistoryAdapter(this, appointmentHistoryList);
         recyclerView.setAdapter(appointmentHistoryAdapter);
     }
