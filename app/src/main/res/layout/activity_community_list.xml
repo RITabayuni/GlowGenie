@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".community.CommunityList">
+    tools:context=".community.CommunityList"
+    android:background="@color/white">
 
     <View
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="@drawable/bg_header"/>
+        android:background="@drawable/bg_header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/halo"
@@ -24,8 +28,8 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="14sp"
-        android:layout_alignStart="@id/header"
-        android:layout_alignTop="@id/header" />
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintTop_toTopOf="@+id/header" />
 
     <TextView
         android:id="@+id/today"
@@ -37,25 +41,23 @@
         android:fontFamily="@font/poppins_regular"
         android:textColor="@color/white"
         android:textSize="12sp"
-        android:layout_below="@id/halo"
-        android:layout_alignStart="@id/header" />
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintTop_toBottomOf="@+id/halo" />
 
     <SearchView
         android:id="@+id/search_bar"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:paddingStart="20dp"
-        android:layoutDirection="rtl"
         android:queryHint="ask here"
         android:layout_marginBottom="20dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_alignBottom="@+id/header"
-        android:layout_alignStart="@id/header"
-        android:layout_alignEnd="@id/header"
+        android:layoutDirection="rtl"
         android:iconifiedByDefault="false"
         android:searchIcon="@drawable/ic_search"
-        android:background="@drawable/bg_search" />
+        android:background="@drawable/bg_search"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintEnd_toEndOf="@+id/header" />
 
     <ImageView
         android:id="@+id/back"
@@ -65,8 +67,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginStart="10dp"
         android:clickable="true"
-        android:layout_below="@id/header"
-        android:layout_alignStart="@id/header" />
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/community"
@@ -78,478 +80,25 @@
         android:textStyle="bold"
         android:layout_marginTop="8dp"
         android:textColor="@color/black"
-        android:layout_toEndOf="@id/back"
-        android:layout_alignTop="@id/back" />
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintStart_toEndOf="@+id/back"/>
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_community"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/back"
-        android:layout_marginTop="10dp">
+        android:layout_height="0dp"
+        android:nestedScrollingEnabled="false"
+        android:paddingBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/community"
+        app:layout_constraintVertical_bias="0.0"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_community"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:id="@+id/Com1dan2"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="35dp"
-                    android:layout_marginEnd="10dp">
-
-                    <ImageView
-                        android:id="@+id/ivCommunity1"
-                        android:layout_width="160dp"
-                        android:layout_height="250dp"
-                        android:src="@drawable/display_com1" />
-
-                    <View
-                        android:id="@+id/descCommunity"
-                        android:layout_width="130dp"
-                        android:layout_height="70dp"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/bg_img_community"
-                        android:layout_alignBottom="@id/ivCommunity1"
-                        android:layout_alignStart="@id/ivCommunity1"
-                        android:layout_alignEnd="@id/ivCommunity1" />
-
-                    <Button
-                        android:id="@+id/join"
-                        android:layout_width="70dp"
-                        android:layout_height="30dp"
-                        android:text="Join"
-                        android:fontFamily="@font/poppins_regular"
-                        android:padding="0dp"
-                        android:background="@drawable/bg_join"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginBottom="60dp"
-                        android:layout_alignBottom="@id/descCommunity"
-                        android:layout_alignStart="@id/descCommunity"
-                        android:layout_alignEnd="@id/descCommunity"/>
-
-                    <TextView
-                        android:id="@+id/judulContent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Brightening Only"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textAlignment="center"
-                        android:layout_marginTop="15dp"
-                        android:layout_alignTop="@id/descCommunity"
-                        android:layout_alignStart="@id/descCommunity"
-                        android:layout_alignEnd="@id/descCommunity"/>
-
-                    <TextView
-                        android:id="@+id/subContent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Share with us your skin \nexperiences"
-                        android:textSize="10sp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:layout_below="@id/judulContent"
-                        android:layout_alignStart="@id/ivCommunity1"
-                        android:layout_alignEnd="@id/ivCommunity1"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="35dp">
-
-                    <ImageView
-                        android:id="@+id/ivCommunity2"
-                        android:layout_width="160dp"
-                        android:layout_height="250dp"
-                        android:src="@drawable/display_com2" />
-
-                    <View
-                        android:id="@+id/descCommunity2"
-                        android:layout_width="130dp"
-                        android:layout_height="70dp"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/bg_img_community"
-                        android:layout_alignBottom="@id/ivCommunity2"
-                        android:layout_alignStart="@id/ivCommunity2"
-                        android:layout_alignEnd="@id/ivCommunity2" />
-
-                    <Button
-                        android:id="@+id/join2"
-                        android:layout_width="70dp"
-                        android:layout_height="30dp"
-                        android:text="Join"
-                        android:fontFamily="@font/poppins_regular"
-                        android:padding="0dp"
-                        android:background="@drawable/bg_join"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginBottom="60dp"
-                        android:layout_alignBottom="@id/descCommunity2"
-                        android:layout_alignStart="@id/descCommunity2"
-                        android:layout_alignEnd="@id/descCommunity2"/>
-
-                    <TextView
-                        android:id="@+id/judulContent2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Oily Skin"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textAlignment="center"
-                        android:layout_marginTop="15dp"
-                        android:layout_alignTop="@id/descCommunity2"
-                        android:layout_alignStart="@id/descCommunity2"
-                        android:layout_alignEnd="@id/descCommunity2"/>
-
-                    <TextView
-                        android:id="@+id/subContent2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Share with us your skin \nexperiences"
-                        android:textSize="10sp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:layout_below="@id/judulContent2"
-                        android:layout_alignStart="@id/ivCommunity2"
-                        android:layout_alignEnd="@id/ivCommunity2"/>
-                </RelativeLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/Com3dan4"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/Com1dan2">
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="35dp"
-                    android:layout_marginEnd="10dp">
-
-                    <ImageView
-                        android:id="@+id/ivCommunity3"
-                        android:layout_width="160dp"
-                        android:layout_height="250dp"
-                        android:src="@drawable/display_com3" />
-
-                    <View
-                        android:id="@+id/descCommunity3"
-                        android:layout_width="130dp"
-                        android:layout_height="70dp"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/bg_img_community"
-                        android:layout_alignBottom="@id/ivCommunity3"
-                        android:layout_alignStart="@id/ivCommunity3"
-                        android:layout_alignEnd="@id/ivCommunity3" />
-
-                    <Button
-                        android:id="@+id/join3"
-                        android:layout_width="70dp"
-                        android:layout_height="30dp"
-                        android:text="Join"
-                        android:fontFamily="@font/poppins_regular"
-                        android:padding="0dp"
-                        android:background="@drawable/bg_join"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginBottom="60dp"
-                        android:layout_alignBottom="@id/descCommunity3"
-                        android:layout_alignStart="@id/descCommunity3"
-                        android:layout_alignEnd="@id/descCommunity3"/>
-
-                    <TextView
-                        android:id="@+id/judulContent3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Acne Prone Skin"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textAlignment="center"
-                        android:layout_marginTop="15dp"
-                        android:layout_alignTop="@id/descCommunity3"
-                        android:layout_alignStart="@id/descCommunity3"
-                        android:layout_alignEnd="@id/descCommunity3"/>
-
-                    <TextView
-                        android:id="@+id/subContent3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Share with us your skin \nexperiences"
-                        android:textSize="10sp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:layout_below="@id/judulContent3"
-                        android:layout_alignStart="@id/ivCommunity3"
-                        android:layout_alignEnd="@id/ivCommunity3"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="35dp">
-
-                    <ImageView
-                        android:id="@+id/ivCommunity4"
-                        android:layout_width="160dp"
-                        android:layout_height="250dp"
-                        android:src="@drawable/display_com4" />
-
-                    <View
-                        android:id="@+id/descCommunity4"
-                        android:layout_width="130dp"
-                        android:layout_height="70dp"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/bg_img_community"
-                        android:layout_alignBottom="@id/ivCommunity4"
-                        android:layout_alignStart="@id/ivCommunity4"
-                        android:layout_alignEnd="@id/ivCommunity4" />
-
-                    <Button
-                        android:id="@+id/join4"
-                        android:layout_width="70dp"
-                        android:layout_height="30dp"
-                        android:text="Join"
-                        android:fontFamily="@font/poppins_regular"
-                        android:padding="0dp"
-                        android:background="@drawable/bg_join"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginBottom="60dp"
-                        android:layout_alignBottom="@id/descCommunity4"
-                        android:layout_alignStart="@id/descCommunity4"
-                        android:layout_alignEnd="@id/descCommunity4"/>
-
-                    <TextView
-                        android:id="@+id/judulContent4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sensitive Skin"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textAlignment="center"
-                        android:layout_marginTop="15dp"
-                        android:layout_alignTop="@id/descCommunity4"
-                        android:layout_alignStart="@id/descCommunity4"
-                        android:layout_alignEnd="@id/descCommunity4"/>
-
-                    <TextView
-                        android:id="@+id/subContent4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Share with us your skin \nexperiences"
-                        android:textSize="10sp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:layout_below="@id/judulContent4"
-                        android:layout_alignStart="@id/ivCommunity4"
-                        android:layout_alignEnd="@id/ivCommunity4"/>
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/Com5dan6"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/Com3dan4">
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="35dp"
-                    android:layout_marginEnd="10dp">
-
-                    <ImageView
-                        android:id="@+id/ivCommunity5"
-                        android:layout_width="160dp"
-                        android:layout_height="250dp"
-                        android:src="@drawable/display_com1" />
-
-                    <View
-                        android:id="@+id/descCommunity5"
-                        android:layout_width="130dp"
-                        android:layout_height="70dp"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/bg_img_community"
-                        android:layout_alignBottom="@id/ivCommunity5"
-                        android:layout_alignStart="@id/ivCommunity5"
-                        android:layout_alignEnd="@id/ivCommunity5" />
-
-                    <Button
-                        android:id="@+id/join5"
-                        android:layout_width="70dp"
-                        android:layout_height="30dp"
-                        android:text="Join"
-                        android:fontFamily="@font/poppins_regular"
-                        android:padding="0dp"
-                        android:background="@drawable/bg_join"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginBottom="60dp"
-                        android:layout_alignBottom="@id/descCommunity5"
-                        android:layout_alignStart="@id/descCommunity5"
-                        android:layout_alignEnd="@id/descCommunity5"/>
-
-                    <TextView
-                        android:id="@+id/judulContent5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Acne Prone Skin"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textAlignment="center"
-                        android:layout_marginTop="15dp"
-                        android:layout_alignTop="@id/descCommunity5"
-                        android:layout_alignStart="@id/descCommunity5"
-                        android:layout_alignEnd="@id/descCommunity5"/>
-
-                    <TextView
-                        android:id="@+id/subContent5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Share with us your skin \nexperiences"
-                        android:textSize="10sp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:layout_below="@id/judulContent5"
-                        android:layout_alignStart="@id/ivCommunity5"
-                        android:layout_alignEnd="@id/ivCommunity5"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="35dp">
-
-                    <ImageView
-                        android:id="@+id/ivCommunity6"
-                        android:layout_width="160dp"
-                        android:layout_height="250dp"
-                        android:src="@drawable/display_com2" />
-
-                    <View
-                        android:id="@+id/descCommunity6"
-                        android:layout_width="130dp"
-                        android:layout_height="70dp"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/bg_img_community"
-                        android:layout_alignBottom="@id/ivCommunity6"
-                        android:layout_alignStart="@id/ivCommunity6"
-                        android:layout_alignEnd="@id/ivCommunity6" />
-
-                    <Button
-                        android:id="@+id/join6"
-                        android:layout_width="70dp"
-                        android:layout_height="30dp"
-                        android:text="Join"
-                        android:fontFamily="@font/poppins_regular"
-                        android:padding="0dp"
-                        android:background="@drawable/bg_join"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginBottom="60dp"
-                        android:layout_alignBottom="@id/descCommunity6"
-                        android:layout_alignStart="@id/descCommunity6"
-                        android:layout_alignEnd="@id/descCommunity6"/>
-
-                    <TextView
-                        android:id="@+id/judulContent6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sensitive Skin"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textAlignment="center"
-                        android:layout_marginTop="15dp"
-                        android:layout_alignTop="@id/descCommunity6"
-                        android:layout_alignStart="@id/descCommunity6"
-                        android:layout_alignEnd="@id/descCommunity6"/>
-
-                    <TextView
-                        android:id="@+id/subContent6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Share with us your skin \nexperiences"
-                        android:textSize="10sp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:layout_below="@id/judulContent6"
-                        android:layout_alignStart="@id/ivCommunity6"
-                        android:layout_alignEnd="@id/ivCommunity6"/>
-                </RelativeLayout>
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
 
     <include
-        layout="@layout/navbar1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
-</RelativeLayout>
+        layout="@layout/navbar1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

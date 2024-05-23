@@ -16,25 +16,23 @@ import com.example.glowgenie.R;
 
 public class CommunityDetail extends AppCompatActivity {
 
-    TextView namaCommunity;
+    TextView namaCommunity, tvDesc;
     ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_community_detail);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
 
         Intent intent = getIntent();
         String judul = intent.getStringExtra("judul");
+        String desc = intent.getStringExtra("desc");
 
         namaCommunity = findViewById(R.id.judul);
         namaCommunity.setText(judul);
+        tvDesc = findViewById(R.id.desc);
+        tvDesc.setText(desc);
 
         back = findViewById(R.id.back);
         back.setOnClickListener(view -> this.finish());

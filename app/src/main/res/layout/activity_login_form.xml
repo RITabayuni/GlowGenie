@@ -9,7 +9,7 @@
 
     <View
         android:id="@+id/header"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="522dp"
         android:background="@drawable/bg_login"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,7 +18,7 @@
 
     <View
         android:id="@+id/header2"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="519dp"
         android:background="@drawable/bg_login_detail"
         app:layout_constraintBottom_toBottomOf="parent"
