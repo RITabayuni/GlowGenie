@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.glowgenie.appointment.Appointment;
 import com.example.glowgenie.appointment.AppointmentHistory;
 import com.example.glowgenie.booking.Booking;
+import com.example.glowgenie.booking.FindDoctor;
 import com.example.glowgenie.calendar.Calendar;
 import com.example.glowgenie.community.Community1;
 import com.example.glowgenie.reels.activityreels;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, Appointment.class);
             startActivity(intent);
         } else if (v.getId() == booking.getId()){
-            Intent intent = new Intent(MainActivity.this, Booking.class);
+            Intent intent = new Intent(MainActivity.this, FindDoctor.class);
             startActivity(intent);
         } else if (v.getId() == community.getId()){
             Intent intent = new Intent(MainActivity.this, Community1.class);
