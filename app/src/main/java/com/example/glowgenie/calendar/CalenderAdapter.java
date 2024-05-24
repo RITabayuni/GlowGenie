@@ -19,8 +19,8 @@ public class CalenderAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
     private List<Item> items;
 
     public CalenderAdapter(Context applicationContext, List<Item> items) {
+        this.context = applicationContext;
         this.items = items;
-        this.context = context;
     }
 
 

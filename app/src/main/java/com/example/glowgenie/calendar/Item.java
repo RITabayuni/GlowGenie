@@ -44,6 +44,4 @@ public class Item {
     public void setNight(String night) {
         Night = night;
     }
-
-
 }

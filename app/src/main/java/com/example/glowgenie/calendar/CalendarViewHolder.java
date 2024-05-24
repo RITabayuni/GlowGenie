@@ -1,7 +1,6 @@
 package com.example.glowgenie.calendar;
 
 import android.view.View;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,5 +17,4 @@ public class CalendarViewHolder extends RecyclerView.ViewHolder {
         this.morningview = morningview;
         this.nightview = nightview;
     }
-
 }
