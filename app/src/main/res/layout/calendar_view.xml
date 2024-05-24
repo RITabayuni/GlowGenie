@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="0dp"
+        android:paddingStart="40dp"
+        android:layout_marginTop="15dp"
+        android:paddingEnd="40dp">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:textAlignment="center"
+            app:srcCompat="@drawable/line" />
+
+        <TextView
+            android:id="@+id/schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Today"
+            android:textAlignment="center"
+            android:textColor="#BE5FE6"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:textAlignment="center"
+            app:srcCompat="@drawable/line" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/jadwal_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/dayskincare"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Hydrating Day"
+            android:textAlignment="center"
+            android:textColor="#BE5FE6"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/skincare_layout"
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <!--   MORNING   -->
+
+        <LinearLayout
+            android:layout_width="195dp"
+            android:layout_height="150dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/morning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Morning"
+                android:textAlignment="center"
+                android:textColor="#B1B1B1" />
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_skincare"
+                android:orientation="vertical"
+                android:textAlignment="center">
+
+                <TextView
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Face Wash \n Serum \n Toner \n Moisturizer \n Sunscreen"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--     NIGHT       -->
+        <LinearLayout
+            android:layout_width="195dp"
+            android:layout_height="150dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/night"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Night"
+                android:textAlignment="center"
+                android:textColor="#B1B1B1" />
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_skincare"
+                android:orientation="vertical"
+                android:textAlignment="center">
+
+                <TextView
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Face Wash \n Serum \n Toner \n Moisturizer"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
