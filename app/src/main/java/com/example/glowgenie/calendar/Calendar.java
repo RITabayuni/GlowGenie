@@ -10,8 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.glowgenie.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Calendar extends AppCompatActivity {
     private LinearLayout btn_layout;
@@ -34,5 +39,16 @@ public class Calendar extends AppCompatActivity {
                 startActivity(new Intent(Calendar.this,Calendar2.class));
             }
         });
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerview);
+
+        List<Item> items = new ArrayList<Item>();
+        items.add(new Item("Today", "Hydrating Day", "Face Wash \n Toner \n Serum \n Moisturizer \n Sunscreen", "Cleansing Oil \n FaceWash \n Toner \n Moisturizer"));
+        items.add(new Item("Today", "Exfoliating Day", "Face Wash \n Toner \n Serum \n Moisturizer \n Sunscreen", "Cleansing Oil \n FaceWash \n Toner \n Moisturizer"));
+        items.add(new Item("Today", "Skin Barrier Day", "Face Wash \n Toner \n Serum \n Moisturizer \n Sunscreen", "Cleansing Oil \n FaceWash \n Toner \n Moisturizer"));
+        items.add(new Item("Today", "Hydrating Day", "Face Wash \n Toner \n Serum \n Moisturizer \n Sunscreen", "Cleansing Oil \n FaceWash \n Toner \n Moisturizer"));
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new CalenderAdapter(getApplicationContext(),items));
     }
 }

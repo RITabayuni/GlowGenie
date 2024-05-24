@@ -16,10 +16,10 @@ import java.util.List;
 
 public class CalenderAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
     Context context;
-    private List<Item> items;
+    List<Item> items;
 
-    public CalenderAdapter(Context applicationContext, List<Item> items) {
-        this.context = applicationContext;
+    public CalenderAdapter(Context context, List<Item> items) {
+        this.context = context;
         this.items = items;
     }
 
