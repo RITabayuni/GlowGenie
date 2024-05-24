@@ -9,6 +9,7 @@
     android:backgroundTint="#A137CD"
     tools:context=".calendar.Calendar">
 
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -20,15 +21,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055"
+        app:layout_constraintVertical_bias="0.034"
         tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/back"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:paddingStart="20dp"
             android:layout_marginRight="20dp"
+            android:paddingStart="20dp"
             android:paddingTop="4dp"
 
             app:srcCompat="@drawable/back" />
@@ -44,27 +45,27 @@
             android:textSize="14sp" />
     </LinearLayout>
 
-
     <ImageView
         android:id="@+id/bg_white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.969"
         app:srcCompat="@drawable/bgputih" />
 
     <TextView
         android:id="@+id/month"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="115dp"
+        android:layout_marginTop="80dp"
         android:text="March 2024"
         android:textColor="@color/white"
+        android:fontFamily="@font/poppins_medium"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/bg_white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -329,7 +330,7 @@
     <include
         layout="@layout/navbar1"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-16dp" />
+        tools:layout_editor_absoluteY="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
