@@ -12,66 +12,47 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.glowgenie.R;
 
-public class CommunityList extends AppCompatActivity implements View.OnClickListener {
+import java.util.ArrayList;
+import java.util.List;
 
-    Button join1, join2, join3, join4;
-    TextView judulContent1, judulContent2, judulContent3, judulContent4;
+public class CommunityList extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private CommunityAdapter adapter;
+    private List<Community> communityList;
     ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_community_list);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-        join1 = findViewById(R.id.join);
-        join2 = findViewById(R.id.join2);
-        join3 = findViewById(R.id.join3);
-        join4 = findViewById(R.id.join4);
-        judulContent1 = findViewById(R.id.judulContent);
-        judulContent2 = findViewById(R.id.judulContent2);
-        judulContent3 = findViewById(R.id.judulContent3);
-        judulContent4 = findViewById(R.id.judulContent4);
+        recyclerView = findViewById(R.id.recycler_community);
+        recyclerView.setHasFixedSize(true);
+
         back = findViewById(R.id.back);
+        back.setOnClickListener(view -> finish());
 
-        join1.setOnClickListener(this);
-        join2.setOnClickListener(this);
-        join3.setOnClickListener(this);
-        join4.setOnClickListener(this);
-        back.setOnClickListener(this);
+        communityList = new ArrayList<>();
+        communityList.add(new Community(R.drawable.display_com1, "Brightening Only", "Brightening your skin together"));
+        communityList.add(new Community(R.drawable.display_com2, "Oily Skin", "Share with us your skin experiences"));
+        communityList.add(new Community(R.drawable.display_com3, "Combi Skin", "Oily and dry skin community"));
+        communityList.add(new Community(R.drawable.display_com4, "Dry Like Desert ", "Dry Skin? Come join us and talk"));
+        communityList.add(new Community(R.drawable.display_com1, "FILKOM Bright", "Waduh anak FILKOM stress yh?"));
+        communityList.add(new Community(R.drawable.display_com2, "Project PAM", "Avv community anak project PAM xixixi"));
+        communityList.add(new Community(R.drawable.display_com3, "TI Skin", "BUKAN SKIN MOBILE LEGEND!"));
+        communityList.add(new Community(R.drawable.display_com4, "UB Skin", "Anak UB? Gas Join rek"));
+
+        adapter = new CommunityAdapter(this, communityList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(CommunityList.this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == join1.getId()){
-            String judul1 = judulContent1.getText().toString();
-            Intent intent = new Intent(CommunityList.this, CommunityDetail.class);
-            intent.putExtra("judul", judul1);
-            startActivity(intent);
-        } else if (v.getId() == join2.getId()){
-            String judul2 = judulContent2.getText().toString();
-            Intent intent = new Intent(CommunityList.this, CommunityDetail.class);
-            intent.putExtra("judul", judul2);
-            startActivity(intent);
-        } else if (v.getId() == join3.getId()){
-            String judul3 = judulContent3.getText().toString();
-            Intent intent = new Intent(CommunityList.this, CommunityDetail.class);
-            intent.putExtra("judul", judul3);
-            startActivity(intent);
-        } else if (v.getId() == join4.getId()){
-            String judul4 = judulContent4.getText().toString();
-            Intent intent = new Intent(CommunityList.this, CommunityDetail.class);
-            intent.putExtra("judul", judul4);
-            startActivity(intent);
-        } else if(v.getId() == back.getId()){
-            back.setOnClickListener(view -> this.finish());
-        }
-    }
+
 }
