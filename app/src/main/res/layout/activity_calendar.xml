@@ -13,7 +13,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         app:flow_horizontalAlign="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +75,6 @@
     <!--    Layout Tanggal -->
 
     <!--TODAY-->
-
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
@@ -93,7 +92,7 @@
         <LinearLayout
             android:id="@+id/linearLayout8"
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -124,7 +123,7 @@
         <!--    Layout 2-->
         <LinearLayout
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -154,7 +153,7 @@
         <!--    Layout 3-->
         <LinearLayout
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -218,7 +217,7 @@
         <!--    Layout 5-->
         <LinearLayout
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -250,7 +249,7 @@
         <!--    Layout 6-->
         <LinearLayout
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -282,7 +281,7 @@
         <!--    Layout 7-->
         <LinearLayout
             android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -316,15 +315,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bg_white"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.245" />
 
     <include
         layout="@layout/navbar1"
@@ -332,3 +332,4 @@
         tools:layout_editor_absoluteY="-16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
