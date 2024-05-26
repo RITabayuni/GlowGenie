@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import com.example.glowgenie.R;
 
 public class Appointment3 extends AppCompatActivity {
     ImageView iconBack;
+    TextView docName;
     Button btnChat;
 
     @Override
@@ -29,6 +31,10 @@ public class Appointment3 extends AppCompatActivity {
             return insets;
         });
 
+        docName = findViewById(R.id.doc_name);
+        Intent I = getIntent();
+        docName.setText(I.getStringExtra("docName"));
+
         iconBack = findViewById(R.id.back);
         iconBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +43,7 @@ public class Appointment3 extends AppCompatActivity {
                 startActivity(I);
             }
         });
+
 
         btnChat = findViewById(R.id.btn_chat);
         btnChat.setOnClickListener(new View.OnClickListener() {
