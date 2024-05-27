@@ -162,7 +162,7 @@
         android:id="@+id/forgotpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="10dp"
         android:text="forgot password?"
         android:fontFamily="@font/poppins_mediumitalic"
         android:textColor="@color/black"

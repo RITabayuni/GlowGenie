@@ -48,8 +48,7 @@ public class Calendar2 extends AppCompatActivity implements View.OnClickListener
         Back = findViewById(R.id.back);
 
         Day3.setOnClickListener(this);
-
-
+        Back.setOnClickListener(this);
 
     }
 
