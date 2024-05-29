@@ -27,15 +27,16 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
-        android:id="@+id/img_doca21"
+        android:id="@+id/img_doc"
         android:layout_width="250dp"
         android:layout_height="370dp"
         android:layout_marginStart="20dp"
-        android:src="@drawable/doc_a21"
+        android:src="@drawable/ic_person"
         app:layout_constraintBottom_toBottomOf="@id/header"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/white" />
     <View
         android:id="@+id/white_bg"
         android:layout_width="match_parent"
@@ -43,7 +44,7 @@
         android:layout_marginTop="290dp"
         android:layout_marginBottom="0dp"
         android:background="@drawable/bg_timeline"
-        app:layout_constraintTop_toBottomOf="@id/img_doca21"
+        app:layout_constraintTop_toBottomOf="@id/img_doc"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <LinearLayout
@@ -52,16 +53,15 @@
         android:orientation="vertical"
         android:layout_marginStart="-30dp"
         android:layout_marginTop="88dp"
-        app:layout_constraintStart_toEndOf="@id/img_doca21"
+        app:layout_constraintStart_toEndOf="@id/img_doc"
         app:layout_constraintTop_toTopOf="parent"
         >
 
         <TextView
             android:id="@+id/doc_name"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="dr. Cameron\nWilliamson "
             android:textColor="@color/white"
             android:textSize="22sp" />
 
