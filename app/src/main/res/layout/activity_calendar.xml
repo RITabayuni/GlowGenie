@@ -60,7 +60,7 @@
         app:srcCompat="@drawable/bgputih" />
 
     <TextView
-        android:id="@+id/month"
+        android:id="@+id/bulan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"

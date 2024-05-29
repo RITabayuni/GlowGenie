@@ -60,7 +60,8 @@
             android:textAlignment="center"
             android:textColor="#BE5FE6"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:clickable="true"/>
     </LinearLayout>
 
     <LinearLayout

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ import java.util.List;
 public class Calendar extends AppCompatActivity implements View.OnClickListener{
     LinearLayout Day5;
     ImageView Back;
+    TextView Bulan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +35,11 @@ public class Calendar extends AppCompatActivity implements View.OnClickListener{
 
         Day5 = findViewById(R.id.day5);
         Back = findViewById(R.id.back);
+        Bulan = findViewById(R.id.bulan);
 
         Day5.setOnClickListener(this);
         Back.setOnClickListener(this);
-
+        Bulan.setOnClickListener(this);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
 
@@ -60,6 +63,11 @@ public class Calendar extends AppCompatActivity implements View.OnClickListener{
             startActivity(intent);
         } else if (v.getId() == Back.getId()) {
             Intent intent = new Intent(Calendar.this, MainActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == Bulan.getId()){
+            String bulan = Bulan.getText().toString();
+            Intent intent =  new Intent(Calendar.this, Month.class);
+            intent.putExtra("Month", bulan);
             startActivity(intent);
         }
     }

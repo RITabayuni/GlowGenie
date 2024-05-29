@@ -33,7 +33,6 @@ public class Calendar2 extends AppCompatActivity implements View.OnClickListener
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
 
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item("Today", "Hydrating Day", "Face Wash \n Toner \n Serum \n Moisturizer \n Sunscreen", "Cleansing Oil \n FaceWash \n Toner \n Moisturizer"));
         items.add(new Item("Tomorrow", "Exfoliating Day", "Face Wash \n Toner \n Serum \n Moisturizer \n Sunscreen", "Cleansing Oil \n FaceWash \n Toner \n Moisturizer"));
         items.add(new Item("Wednesday", "Skin Barrier Day", "Face Wash \n Toner \n Serum \n Moisturizer \n Sunscreen", "Cleansing Oil \n FaceWash \n Toner \n Moisturizer"));
         items.add(new Item("Thursday", "Hydrating Day", "Face Wash \n Toner \n Serum \n Moisturizer \n Sunscreen", "Cleansing Oil \n FaceWash \n Toner \n Moisturizer"));
