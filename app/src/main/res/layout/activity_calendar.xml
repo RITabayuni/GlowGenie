@@ -31,7 +31,6 @@
             android:layout_marginRight="20dp"
             android:paddingStart="20dp"
             android:paddingTop="4dp"
-
             app:srcCompat="@drawable/back" />
 
         <TextView
@@ -59,28 +58,31 @@
         app:layout_constraintVertical_bias="0.847"
         app:srcCompat="@drawable/bgputih" />
 
+    <!--    Layout Tanggal -->
+
+    <!--TODAY-->
+
     <TextView
         android:id="@+id/bulan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="March 2024"
         android:textColor="@color/white"
-        android:fontFamily="@font/poppins_medium"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/bg_white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.065" />
 
-    <!--    Layout Tanggal -->
-
-    <!--TODAY-->
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginBottom="24dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/bg_white"
@@ -95,8 +97,8 @@
             android:id="@+id/day1"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="parent"
@@ -128,8 +130,8 @@
             android:id="@+id/day2"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="parent"
@@ -160,8 +162,8 @@
             android:id="@+id/day3"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="parent"
@@ -192,8 +194,8 @@
             android:id="@+id/day4"
             android:layout_width="50dp"
             android:layout_height="60dp"
-            android:gravity="center"
             android:background="@drawable/bg_tgl"
+            android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -227,8 +229,8 @@
             android:id="@+id/day5"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="parent"
@@ -261,8 +263,8 @@
             android:id="@+id/day6"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="parent"
@@ -295,8 +297,8 @@
             android:id="@+id/day7"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="parent"
