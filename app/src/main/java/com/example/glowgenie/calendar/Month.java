@@ -3,9 +3,7 @@ package com.example.glowgenie.calendar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -16,30 +14,20 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.glowgenie.MainActivity;
 import com.example.glowgenie.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calendar extends AppCompatActivity implements View.OnClickListener{
-    LinearLayout Day5;
-    ImageView Back;
+public class Month extends AppCompatActivity {
     TextView Bulan;
+    ImageView Back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_calendar);
-
-        Day5 = findViewById(R.id.day5);
-        Back = findViewById(R.id.back);
-        Bulan = findViewById(R.id.bulan);
-
-        Day5.setOnClickListener(this);
-        Back.setOnClickListener(this);
-        Bulan.setOnClickListener(this);
+        setContentView(R.layout.activity_month);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
 
@@ -54,21 +42,24 @@ public class Calendar extends AppCompatActivity implements View.OnClickListener{
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new CalenderAdapter(getApplicationContext(),items));
+
+        Bulan = findViewById(R.id.bulan);
+        Intent intent = getIntent();
+        Bulan.setText(intent.getStringExtra("Month"));
+
+        Back = findViewById(R.id.back);
+        Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Month.this, Calendar.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == Day5.getId()) {
-            Intent intent = new Intent(Calendar.this, Calendar2.class);
-            startActivity(intent);
-        } else if (v.getId() == Back.getId()) {
-            Intent intent = new Intent(Calendar.this, MainActivity.class);
-            startActivity(intent);
-        } else if (v.getId() == Bulan.getId()){
-            String bulan = Bulan.getText().toString();
-            Intent intent =  new Intent(Calendar.this, Month.class);
-            intent.putExtra("Month", bulan);
-            startActivity(intent);
-        }
-    }
+
 }

@@ -9,28 +9,28 @@
     android:backgroundTint="#A137CD"
     tools:context=".calendar.Calendar">
 
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         app:flow_horizontalAlign="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055"
+        app:layout_constraintVertical_bias="0.034"
         tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/back"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:paddingStart="20dp"
             android:layout_marginRight="20dp"
+            android:paddingStart="20dp"
             android:paddingTop="4dp"
-
             app:srcCompat="@drawable/back" />
 
         <TextView
@@ -39,46 +39,50 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="210dp"
             android:paddingTop="2dp"
+            android:fontFamily="@font/poppins_medium"
             android:text="Your Schedule"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
     </LinearLayout>
-
 
     <ImageView
         android:id="@+id/bg_white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.847"
         app:srcCompat="@drawable/bgputih" />
 
+    <!--    Layout Tanggal -->
+
+    <!--TODAY-->
+
     <TextView
-        android:id="@+id/month"
+        android:id="@+id/bulan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="115dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="March 2024"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/bg_white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.065" />
 
-    <!--    Layout Tanggal -->
-
-    <!--TODAY-->
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginBottom="24dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/bg_white"
@@ -90,9 +94,10 @@
 
         <!--    Layout 1-->
         <LinearLayout
-            android:id="@+id/linearLayout8"
+            android:id="@+id/day1"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -122,8 +127,10 @@
 
         <!--    Layout 2-->
         <LinearLayout
+            android:id="@+id/day2"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -152,8 +159,10 @@
 
         <!--    Layout 3-->
         <LinearLayout
+            android:id="@+id/day3"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -182,10 +191,11 @@
 
         <!--    Layout 4-->
         <LinearLayout
-            android:id="@+id/btn_lay"
+            android:id="@+id/day4"
             android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:background="@drawable/bg_tgl"
+            android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -196,7 +206,7 @@
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="4dp"
+                android:paddingTop="5dp"
                 android:text="Mo"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -206,7 +216,7 @@
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="2dp"
+                android:paddingTop="3dp"
                 android:text="18"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -216,8 +226,10 @@
 
         <!--    Layout 5-->
         <LinearLayout
+            android:id="@+id/day5"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -248,8 +260,10 @@
 
         <!--    Layout 6-->
         <LinearLayout
+            android:id="@+id/day6"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -280,8 +294,10 @@
 
         <!--    Layout 7-->
         <LinearLayout
+            android:id="@+id/day7"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/bg_white"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -327,9 +343,7 @@
         app:layout_constraintVertical_bias="0.245" />
 
     <include
-        layout="@layout/navbar1"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-16dp" />
+        layout="@layout/navbar1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

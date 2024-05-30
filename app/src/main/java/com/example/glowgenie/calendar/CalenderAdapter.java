@@ -23,8 +23,6 @@ public class CalenderAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
         this.items = items;
     }
 
-
-
     @NonNull
     @Override
     public CalendarViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -37,13 +35,11 @@ public class CalenderAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
         holder.dayview.setText(items.get(position).getDaySkincare());
         holder.morningview.setText(items.get(position).getMorning());
         holder.nightview.setText(items.get(position).getNight());
-
     }
 
     @Override
     public int getItemCount() {
         return items.size();
-
     }
 
 }
