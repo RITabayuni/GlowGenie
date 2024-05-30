@@ -20,7 +20,7 @@ public class AppointmentHistoryAdapter extends RecyclerView.Adapter<AppointmentH
 
     public AppointmentHistoryAdapter(Context context, List<AppointmentHistoryModel> appointmentHistoryList) {
         this.context = context;
-        this.appointmentHistoryList = appointmentHistoryList;this.context = context;
+        this.appointmentHistoryList = appointmentHistoryList;
     }
 
     @NonNull
