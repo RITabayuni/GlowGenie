@@ -303,7 +303,5 @@
     </LinearLayout>
 
     <include
-        layout="@layout/navbar1"
-        android:layout_width="423dp"
-        android:layout_height="820dp" />
+        layout="@layout/navbar1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
