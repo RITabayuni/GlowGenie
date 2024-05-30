@@ -21,6 +21,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.glowgenie.R;
+import com.google.firebase.FirebaseApp;
 
 public class ChatConsultation extends AppCompatActivity {
     ImageView iconBack;
@@ -52,6 +53,9 @@ public class ChatConsultation extends AppCompatActivity {
                 showAlertDialog();
             }
         });
+
+        FirebaseApp.initializeApp(this);
+
     }
 
     public void showAlertDialog (){
