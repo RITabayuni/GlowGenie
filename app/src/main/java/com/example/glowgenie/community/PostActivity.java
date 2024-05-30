@@ -153,7 +153,7 @@ public class PostActivity extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String currentUid = user.getUid();
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance("gs://glowgenie-a6796.appspot.com");
         DocumentReference documentReference = db.collection("user").document(currentUid);
 
         documentReference.get().addOnCompleteListener((task)-> {
