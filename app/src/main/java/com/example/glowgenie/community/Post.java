@@ -10,12 +10,13 @@ public class Post {
 
     private String userProfileUrl;
     private long timestamp;
+    private String userId;
 
 
     public Post(){
 
     }
-    public Post(String postId, String title, String desc, String imageUrl, String user, String userProfileUrl,  long timestamp){
+    public Post(String postId, String title, String desc, String imageUrl, String user, String userProfileUrl,  long timestamp, String userId){
         this.postId = postId;
         this.title = title;
         this.desc = desc;
@@ -23,6 +24,7 @@ public class Post {
         this.user = user;
         this.userProfileUrl = userProfileUrl;
         this.timestamp = timestamp;
+        this.userId = userId;
     }
 
     public String getPostId(){
@@ -80,5 +82,12 @@ public class Post {
         return timestamp;
     }
 
+    public void setUserId(String userId){
+        this.userId = userId;
+    }
+
+    public String getUserId(){
+        return userId;
+    }
 
 }
