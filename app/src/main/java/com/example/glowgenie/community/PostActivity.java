@@ -121,8 +121,9 @@ public class PostActivity extends AppCompatActivity {
                     if (currentUser != null) {
                         String userName = currentUser.getDisplayName();
                         String userProfileUrl = currentUser.getPhotoUrl() != null ? currentUser.getPhotoUrl().toString() : "";
+                        String userId = currentUser.getUid();
                         String postId = databaseReference.push().getKey();
-                        Post post = new Post(postId, title, desc, uri.toString(), userName, userProfileUrl, System.currentTimeMillis());
+                        Post post = new Post(postId, title, desc, uri.toString(), userName, userProfileUrl, System.currentTimeMillis(), userId);
                         databaseReference.child(postId).setValue(post).addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
                                 Toast.makeText(PostActivity.this, "Post uploaded", Toast.LENGTH_SHORT).show();

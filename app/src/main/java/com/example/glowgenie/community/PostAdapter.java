@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.glowgenie.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -68,9 +69,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.tvTime.setText(formatTimestamp(post.getTimestamp()));
         Picasso.get().load(post.getImageUrl()).fit().centerCrop().into(holder.ivImage);
 
-        holder.menu.setOnClickListener(v->{
+        holder.menu.setOnClickListener(v -> {
             PopupMenu popupMenu = new PopupMenu(context, holder.menu);
             popupMenu.inflate(R.menu.menu_options);
+
+            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+            if (currentUser != null && currentUser.getUid().equals(post.getUserId())) {
+                popupMenu.getMenu().findItem(R.id.action_edit).setVisible(true);
+                popupMenu.getMenu().findItem(R.id.action_delete).setVisible(true);
+            } else {
+                popupMenu.getMenu().findItem(R.id.action_edit).setVisible(false);
+                popupMenu.getMenu().findItem(R.id.action_delete).setVisible(false);
+            }
             popupMenu.setOnMenuItemClickListener(item -> {
                 int itemId = item.getItemId();
                 if (itemId == R.id.action_edit) {
@@ -90,10 +100,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
                 } else {
                     return false;
                 }
-
             });
             popupMenu.show();
         });
+
     }
 
     private void deletePost(String postId, int position) {
