@@ -53,7 +53,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation ("jp.wasabeef:picasso-transformations:2.4.0")
     implementation(libs.firebase.auth)
-
 
 }

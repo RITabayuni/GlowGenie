@@ -21,9 +21,9 @@ import com.example.glowgenie.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,8 +32,9 @@ public class CommunityDetail extends AppCompatActivity {
     TextView namaCommunity, tvDesc;
     ImageView back;
     private RecyclerView recyclerView;
-    private PostAdapter adapter;
-    private List<PostMember> postList;
+    private PostAdapter postAdapter;
+    private List<Post> postList;
+    private DatabaseReference databaseReference;
     Button btnMember;
     boolean isMember = false;
     FloatingActionButton floatingActionButton;
@@ -55,7 +56,7 @@ public class CommunityDetail extends AppCompatActivity {
         tvDesc.setText(desc);
 
         back = findViewById(R.id.back);
-        back.setOnClickListener(view -> this.finish());
+        back.setOnClickListener(v -> this.finish());
 
         floatingActionButton = findViewById(R.id.add_btn);
         floatingActionButton.setOnClickListener(view->{
@@ -72,35 +73,43 @@ public class CommunityDetail extends AppCompatActivity {
                         .setPositiveButton("Yes", (dialog, which) -> {
                             isMember = false;
                             updateMember();
-                            adapter.notifyDataSetChanged();
+                            postAdapter.notifyDataSetChanged();
                         })
                         .setNegativeButton("No", null)
                         .show();
             } else {
                 isMember = true ;
                 updateMember();
-                adapter.notifyDataSetChanged();
+                postAdapter.notifyDataSetChanged();
             }
         });
         recyclerView = findViewById(R.id.recycler_post);
         recyclerView.setHasFixedSize(true);
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         postList = new ArrayList<>();
-        adapter = new PostAdapter(this, postList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(CommunityDetail.this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        postAdapter = new PostAdapter(this, postList);
+        recyclerView.setAdapter(postAdapter);
 
-        fetchPosts();
-//        postList.add(new Post("Drop Review Avoskin", "Buat kalian yang pake avoskin, drop review kalian di comment dong. Penasaran banget mau cobaaa", R.drawable.avoskin));
-//        postList.add(new Post("Spill Produk Mantap", "Aku rekomendasiin Avoskin buat kalian, ini tuh bagus banget ya Allah", R.drawable.avoskin));
-//        postList.add(new Post("HELP ME BRUNTUSAN", "HUHUHUHU HELP PLIS AKU BREAKOUT LAGIIIII. Saran Produk buat acne sensitive skin dongg guyss", R.drawable.acne_pic));
+        databaseReference = FirebaseDatabase.getInstance("https://glowgenie-a6796-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("posts");
 
-//        adapter = new DetailAdapter(this, postList);
-//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(CommunityDetail.this);
-//        recyclerView.setLayoutManager(layoutManager);
-//        recyclerView.setAdapter(adapter);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                postList.clear();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Post post = postSnapshot.getValue(Post.class);
+                    postList.add(post);
+                }
+                postAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(CommunityDetail.this, "Failed to load posts", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     private void updateMember(){
@@ -109,26 +118,5 @@ public class CommunityDetail extends AppCompatActivity {
         } else {
             btnMember.setText("Join");
         }
-    }
-
-    private void fetchPosts() {
-        FirebaseDatabase.getInstance("https://glowgenie-a6796-default-rtdb.asia-southeast1.firebasedatabase.app/")
-                .getReference("All posts")
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        postList.clear();
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            PostMember post = dataSnapshot.getValue(PostMember.class);
-                            postList.add(post);
-                        }
-                        adapter.notifyDataSetChanged();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(CommunityDetail.this, "Failed to load posts", Toast.LENGTH_SHORT).show();
-                    }
-                });
     }
 }
