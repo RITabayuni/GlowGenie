@@ -17,12 +17,14 @@ import com.example.glowgenie.booking.FindDoctor;
 import com.example.glowgenie.calendar.Calendar;
 import com.example.glowgenie.community.Community1;
 import com.example.glowgenie.reels.activityreels;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     RelativeLayout appointment, booking, community, history;
     ImageView reels;
-    TextView seeMore;
+    TextView seeMore, Username ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         history = findViewById(R.id.history);
         reels = findViewById(R.id.reels);
         seeMore = findViewById(R.id.seeMore);
+        Username = findViewById(R.id.halo);
 
         appointment.setOnClickListener(this);
         booking.setOnClickListener(this);
@@ -42,6 +45,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         history.setOnClickListener(this);
         reels.setOnClickListener(this);
         seeMore.setOnClickListener(this);
+    }
+
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null){
+            Username.setText("Halo, " + currentUser.getDisplayName());
+        }
     }
 
     @Override
