@@ -50,25 +50,6 @@
           ]
         }
       }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:171675042350:android:a3c870086477f4c3d955bf",
-        "android_client_info": {
-          "package_name": "com.example.pam9"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD2MEjfBJiob1t2qNrurCUIP3ZhPuVs_fU"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
     }
   ],
   "configuration_version": "1"
