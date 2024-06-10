@@ -35,7 +35,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularViewHolder> {
     public void onBindViewHolder(@NonNull PopularViewHolder holder, int position) {
         PopularDomain item = items.get(position);
         holder.title.setText(item.getTitle());
-        holder.price.setText(String.valueOf(item.getPrice()));
+        holder.price.setText(formatPrice(item.getPrice()));
         holder.loc.setText(item.getLocation());
         holder.img.setImageResource(item.getImgresource());
 

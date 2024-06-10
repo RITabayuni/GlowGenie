@@ -31,38 +31,35 @@
         app:layout_constraintStart_toStartOf="@+id/header"
         app:layout_constraintEnd_toEndOf="@+id/header"/>
 
-    <ImageButton
+    <ImageView
+        android:id="@+id/btn_back"
         android:layout_width="39dp"
         android:layout_height="39dp"
         android:background="@android:color/transparent"
         android:elevation="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
         android:src="@drawable/back_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.234"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@id/header"  />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_marginLeft="5dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Product Recommendation"
         android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.222"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.236" />
+        app:layout_constraintStart_toEndOf="@id/btn_back"
+        app:layout_constraintTop_toBottomOf="@id/header"  />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Recycler_View1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title"
