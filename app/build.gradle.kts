@@ -44,5 +44,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation ("com.google.code.gson:gson:2.9.1")
     implementation("androidx.recyclerview:recyclerview:1.2.1")
 }

@@ -567,10 +567,10 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="Tangerang Selatan"
-                                        android:textSize="8sp"
                                         android:fontFamily="@font/poppins_light"
-                                        android:paddingLeft="5dp"/>
+                                        android:paddingLeft="5dp"
+                                        android:text="Tangerang Selatan"
+                                        android:textSize="8sp" />
 
                                     <LinearLayout
                                         android:layout_width="match_parent"

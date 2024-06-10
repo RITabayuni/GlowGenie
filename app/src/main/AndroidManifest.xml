@@ -12,11 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GlowGenie"
         tools:targetApi="31">
+
+
+        <activity
+            android:name=".shop.Shop"
+            android:exported="true" />
         <activity
             android:name=".calendar.Month"
-            android:exported="false" />
-        <activity
-            android:name=".calendar.Skincare"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
