@@ -4,9 +4,7 @@ public class PopularDomain {
     private String title;
     private String location;
     private int price;
-
     private int imgresource;
-
 
     public PopularDomain(String title, String location, int price, int imgresource) {
         this.title = title;
@@ -40,7 +38,7 @@ public class PopularDomain {
     }
 
     public int getPrice() {
-        return (int) price;
+        return price;
     }
 
     public void setPrice(int price) {

@@ -38,6 +38,8 @@ public class Shop extends AppCompatActivity implements View.OnClickListener{
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new PopularAdapter(items, getApplicationContext()));
 
+
+
     }
 
     @Override

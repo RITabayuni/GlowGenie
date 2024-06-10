@@ -56,6 +56,13 @@ public class LoginForm extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login_form);
 
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            updateUI(currentUser);
+            return;
+        }
+
         Register = findViewById(R.id.register);
         Register.setOnClickListener(new View.OnClickListener() {
             @Override

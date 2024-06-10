@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.glowgenie.R;
 
 public class PopularViewHolder extends RecyclerView.ViewHolder {
-
     ImageView img;
     TextView title, loc, price;
 

@@ -71,9 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if (v.getId() == seeMore.getId()) {
             Intent intent = new Intent(MainActivity.this, Calendar.class);
             startActivity(intent);
-        } else if (v.getId() == shop.getId()) {
-            Intent intent = new Intent(MainActivity.this, Shop.class);
-            startActivity(intent);
+//        } else if (v.getId() == shop.getId()) {
+//            Intent intent = new Intent(MainActivity.this, Shop.class);
+//            startActivity(intent);
         } else if (v.getId() == seeMore2.getId()) {
             Intent intent = new Intent(MainActivity.this, Shop.class);
             startActivity(intent);

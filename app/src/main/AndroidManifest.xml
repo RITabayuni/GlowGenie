@@ -27,6 +27,12 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".shop.Shop"
+            android:exported="false" />
+        <activity
+            android:name=".shop.Shop1"
+            android:exported="false" />
+        <activity
             android:name=".appointment.Appointment"
             android:exported="false" />
         <activity
