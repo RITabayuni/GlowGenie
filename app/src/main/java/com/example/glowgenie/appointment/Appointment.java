@@ -37,9 +37,7 @@ public class Appointment extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-
         Intent I = new Intent(Appointment.this, Appointment3.class);
-
         String doctorName = null;
 
         if (v.getId() == R.id.cv_today) {

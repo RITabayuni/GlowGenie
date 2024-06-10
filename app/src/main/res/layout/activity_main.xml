@@ -105,7 +105,9 @@
                             android:id="@+id/coverArticle1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
                             android:layout_marginStart="30dp"
+                            android:layout_marginBottom="-8dp"
                             android:background="@drawable/doctor1" />
 
                         <TextView
@@ -144,10 +146,12 @@
                             android:id="@+id/coverArticle2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
                             android:layout_marginStart="10dp"
+                            android:layout_marginBottom="0dp"
                             android:background="@drawable/doctor1"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/headerArticle2"

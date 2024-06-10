@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -16,7 +18,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.glowgenie.R;
-
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,10 +32,12 @@ public class CommunityDetail extends AppCompatActivity {
     TextView namaCommunity, tvDesc;
     ImageView back;
     private RecyclerView recyclerView;
-    private DetailAdapter adapter;
+    private PostAdapter postAdapter;
     private List<Post> postList;
+    private DatabaseReference databaseReference;
     Button btnMember;
     boolean isMember = false;
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +56,13 @@ public class CommunityDetail extends AppCompatActivity {
         tvDesc.setText(desc);
 
         back = findViewById(R.id.back);
-        back.setOnClickListener(view -> this.finish());
+        back.setOnClickListener(v -> this.finish());
+
+        floatingActionButton = findViewById(R.id.add_btn);
+        floatingActionButton.setOnClickListener(view->{
+            Intent intentAdd = new Intent(CommunityDetail.this, PostActivity.class);
+            startActivity(intentAdd);
+        });
 
         btnMember = findViewById(R.id.btnMember);
         updateMember();
@@ -58,30 +73,43 @@ public class CommunityDetail extends AppCompatActivity {
                         .setPositiveButton("Yes", (dialog, which) -> {
                             isMember = false;
                             updateMember();
-                            adapter.notifyDataSetChanged();
+                            postAdapter.notifyDataSetChanged();
                         })
                         .setNegativeButton("No", null)
                         .show();
             } else {
-                isMember = true;
+                isMember = true ;
                 updateMember();
-                adapter.notifyDataSetChanged();
+                postAdapter.notifyDataSetChanged();
             }
         });
         recyclerView = findViewById(R.id.recycler_post);
         recyclerView.setHasFixedSize(true);
-
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         postList = new ArrayList<>();
-        postList.add(new Post("Drop Review Avoskin", "Buat kalian yang pake avoskin, drop review kalian di comment dong. Penasaran banget mau cobaaa", R.drawable.avoskin));
-        postList.add(new Post("Spill Produk Mantap", "Aku rekomendasiin Avoskin buat kalian, ini tuh bagus banget ya Allah", R.drawable.avoskin));
-        postList.add(new Post("HELP ME BRUNTUSAN", "HUHUHUHU HELP PLIS AKU BREAKOUT LAGIIIII. Saran Produk buat acne sensitive skin dongg guyss", R.drawable.acne_pic));
+        postAdapter = new PostAdapter(this, postList);
+        recyclerView.setAdapter(postAdapter);
 
-        adapter = new DetailAdapter(this, postList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(CommunityDetail.this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        databaseReference = FirebaseDatabase.getInstance("https://glowgenie-a6796-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("posts");
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                postList.clear();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Post post = postSnapshot.getValue(Post.class);
+                    postList.add(post);
+                }
+                postAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(CommunityDetail.this, "Failed to load posts", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     private void updateMember(){

@@ -2,20 +2,38 @@ package com.example.glowgenie.community;
 
 public class Post {
 
+    private String postId;
     private String title;
-    private String content;
-    private int image;
+    private String desc;
+    private String imageUrl;
+    private String user;
 
-    private boolean isMember;
+    private String userProfileUrl;
+    private long timestamp;
+    private String userId;
 
 
-    public Post(String title, String content, int image){
+    public Post(){
+
+    }
+    public Post(String postId, String title, String desc, String imageUrl, String user, String userProfileUrl,  long timestamp, String userId){
+        this.postId = postId;
         this.title = title;
-        this.content = content;
-        this.image = image;
-        this.isMember = false;
+        this.desc = desc;
+        this.imageUrl = imageUrl;
+        this.user = user;
+        this.userProfileUrl = userProfileUrl;
+        this.timestamp = timestamp;
+        this.userId = userId;
     }
 
+    public String getPostId(){
+        return postId;
+    }
+
+    public void setPostId(String postId){
+        this.postId = postId;
+    }
     public String getTitle(){
         return title;
     }
@@ -25,28 +43,51 @@ public class Post {
     }
 
 
-    public String getContent(){
-        return content;
+    public String getDesc(){
+        return desc;
     }
 
-    public void setContent(String description){
-        this.content = content;
+    public void setDesc(String desc){
+        this.desc = desc;
     }
-    public void setImage(int image){
-        this.image = image;
-    }
-
-    public int getImage(){
-        return image;
+    public void setImageUrl(String imageUrl){
+        this.imageUrl = imageUrl;
     }
 
-    public void setIsMember(boolean isMember){
-        this.isMember = isMember;
+    public String getImageUrl(){
+        return imageUrl;
     }
 
-    public boolean isMember(){
-        return isMember;
+    public void setUser(String user){
+        this.user = user;
     }
 
+    public String getUser(){
+        return user;
+    }
+
+    public void setUserProfileUrl(String userProfileUrl){
+        this.userProfileUrl = userProfileUrl;
+    }
+
+    public String getUserProfileUrl(){
+        return userProfileUrl;
+    }
+
+    public void setTimestamp(long timestamp){
+        this.timestamp = timestamp;
+    }
+
+    public long getTimestamp(){
+        return timestamp;
+    }
+
+    public void setUserId(String userId){
+        this.userId = userId;
+    }
+
+    public String getUserId(){
+        return userId;
+    }
 
 }
