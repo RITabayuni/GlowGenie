@@ -19,24 +19,31 @@ import com.example.glowgenie.calendar.Calendar;
 import com.example.glowgenie.community.Community1;
 import com.example.glowgenie.reels.activityreels;
 import com.example.glowgenie.shop.Shop;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     RelativeLayout appointment, booking, community, history;
-    ;
     ImageView reels, shop;
-    TextView seeMore, seeMore2;
+    TextView halo, today, seeMore, seeMore2;
+    FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        mAuth = FirebaseAuth.getInstance();
+
         appointment = findViewById(R.id.appointment);
         booking = findViewById(R.id.booking);
         community = findViewById(R.id.community);
         history = findViewById(R.id.history);
         reels = findViewById(R.id.reels);
+        halo = findViewById(R.id.halo);
+        today = findViewById(R.id.today);
         seeMore = findViewById(R.id.seeMore);
         seeMore2 = findViewById(R.id.seeMore2);
         shop = findViewById(R.id.shop);
@@ -49,6 +56,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         seeMore.setOnClickListener(this);
         seeMore2.setOnClickListener(this);
         shop.setOnClickListener(this);
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            String name = user.getDisplayName();
+            if (name != null) {
+                halo.setText("Halo, " + name + "!");
+            }
+        }
     }
 
     @Override

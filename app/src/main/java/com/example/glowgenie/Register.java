@@ -40,8 +40,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         if (v.getId() == registerButton.getId()) {
-            Intent intent = new Intent(Register.this, LoginForm.class);
-            startActivity(intent);
             registerUser();
         } else if (v.getId() == signinTextView.getId()) {
             Intent intent = new Intent(Register.this, LoginForm.class);
@@ -109,6 +107,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                     } else {
                         Toast.makeText(Register.this, "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(Register.this, "Registration failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 }
