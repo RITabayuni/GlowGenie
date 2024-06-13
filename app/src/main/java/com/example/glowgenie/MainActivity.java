@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -17,12 +18,14 @@ import com.example.glowgenie.booking.FindDoctor;
 import com.example.glowgenie.calendar.Calendar;
 import com.example.glowgenie.community.Community1;
 import com.example.glowgenie.reels.activityreels;
+import com.example.glowgenie.shop.Shop;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     RelativeLayout appointment, booking, community, history;
-    ImageView reels;
-    TextView seeMore;
+    ;
+    ImageView reels, shop;
+    TextView seeMore, seeMore2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         history = findViewById(R.id.history);
         reels = findViewById(R.id.reels);
         seeMore = findViewById(R.id.seeMore);
+        seeMore2 = findViewById(R.id.seeMore2);
+        shop = findViewById(R.id.shop);
 
         appointment.setOnClickListener(this);
         booking.setOnClickListener(this);
@@ -42,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         history.setOnClickListener(this);
         reels.setOnClickListener(this);
         seeMore.setOnClickListener(this);
+        seeMore2.setOnClickListener(this);
+        shop.setOnClickListener(this);
     }
 
     @Override
@@ -63,6 +70,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }else if (v.getId() == seeMore.getId()) {
             Intent intent = new Intent(MainActivity.this, Calendar.class);
+            startActivity(intent);
+        } else if (v.getId() == shop.getId()) {
+            Intent intent = new Intent(MainActivity.this, Shop.class);
+            startActivity(intent);
+        } else if (v.getId() == seeMore2.getId()) {
+            Intent intent = new Intent(MainActivity.this, Shop.class);
             startActivity(intent);
         }
     }

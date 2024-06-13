@@ -35,6 +35,7 @@ public class CalenderAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
         holder.dayview.setText(items.get(position).getDaySkincare());
         holder.morningview.setText(items.get(position).getMorning());
         holder.nightview.setText(items.get(position).getNight());
+
     }
 
     @Override

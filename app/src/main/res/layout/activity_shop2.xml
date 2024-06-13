@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".shop.Shop">
+
+
+    <View
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@drawable/bg_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:paddingStart="20dp"
+        android:queryHint="search"
+        android:layout_marginBottom="25dp"
+        android:layoutDirection="rtl"
+        android:iconifiedByDefault="false"
+        android:searchIcon="@drawable/ic_search"
+        android:background="@drawable/bg_search"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintEnd_toEndOf="@+id/header"/>
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:background="@android:color/transparent"
+        android:elevation="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"  />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_marginLeft="5dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Product Recommendation"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@id/btn_back"
+        app:layout_constraintTop_toBottomOf="@id/header"  />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Recycler_View1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:listitem="@layout/item_shop" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
