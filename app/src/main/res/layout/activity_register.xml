@@ -61,6 +61,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
             android:paddingTop="30dp"
+            android:paddingBottom="20dp"
             android:text="Register"
             android:textAlignment="center"
             android:textColor="#7B1FA2"
