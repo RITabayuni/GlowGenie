@@ -13,7 +13,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.glowgenie.MainActivity;
 import com.example.glowgenie.R;
+import com.example.glowgenie.community.Community1;
 
 public class Booking extends AppCompatActivity {
 
@@ -37,7 +39,9 @@ public class Booking extends AppCompatActivity {
         bt_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(Booking.this, FindDoctor.class);
+                startActivity(intent);
+//                finish();
             }
         });
 

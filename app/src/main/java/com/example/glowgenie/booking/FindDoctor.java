@@ -2,6 +2,8 @@ package com.example.glowgenie.booking;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +14,9 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.glowgenie.MainActivity;
 import com.example.glowgenie.R;
+import com.example.glowgenie.community.Community1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +26,7 @@ public class FindDoctor extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DoctorAdapter doctorAdapter;
     private List<Doctor> doctorList;
+    private ImageView  bt_back;
 
 
     @Override
@@ -34,6 +39,8 @@ public class FindDoctor extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        bt_back = findViewById(R.id.back);
 
 
         recyclerView = findViewById(R.id.recycler_view);
@@ -50,6 +57,15 @@ public class FindDoctor extends AppCompatActivity {
 
         doctorAdapter = new DoctorAdapter(this, doctorList);
         recyclerView.setAdapter(doctorAdapter);
+
+        bt_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FindDoctor.this, MainActivity.class);
+                startActivity(intent);
+//                finish();
+            }
+        });
 
     }
 }
