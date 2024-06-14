@@ -16,12 +16,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.glowgenie.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CommunityList extends AppCompatActivity {
-
+    private TextView halo;
+    private FirebaseAuth mAuth;
     private RecyclerView recyclerView;
     private CommunityAdapter adapter;
     private List<Community> communityList;
@@ -32,6 +35,9 @@ public class CommunityList extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_community_list);
 
+        mAuth = FirebaseAuth.getInstance();
+
+        halo = findViewById(R.id.halo);
         recyclerView = findViewById(R.id.recycler_community);
         recyclerView.setHasFixedSize(true);
 
@@ -52,6 +58,14 @@ public class CommunityList extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(CommunityList.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            String name = user.getDisplayName();
+            if (name != null) {
+                halo.setText("Halo, " + name + "!");
+            }
+        }
     }
 
 

@@ -59,7 +59,7 @@ public class AppointmentHistoryAdapter extends RecyclerView.Adapter<AppointmentH
             tv_date = itemView.findViewById(R.id.tv_date);
             tv_diagnosis = itemView.findViewById(R.id.tv_diagnosis);
             tv_complaint = itemView.findViewById(R.id.tv_complaint);
-//            tv_drugTherapy = itemView.findViewById(R.id.tv_drugTherapy);
+            tv_drugTherapy = itemView.findViewById(R.id.tv_drugTherapy);
             img_doctorImage = itemView.findViewById(R.id.img_doctor);
             img_rating = itemView.findViewById(R.id.img_rating);
         }

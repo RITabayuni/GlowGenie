@@ -2,21 +2,6 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="Appointment (1)">
-        <State />
-      </entry>
-      <entry key="Calendar (1)">
-        <State />
-      </entry>
-      <entry key="LoginForm">
-        <State />
-      </entry>
-      <entry key="MainActivity">
-        <State />
-      </entry>
-      <entry key="Register">
-        <State />
-      </entry>
       <entry key="app">
         <State />
       </entry>

@@ -15,10 +15,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.glowgenie.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Community1 extends AppCompatActivity implements View.OnClickListener{
 
-    TextView seeMore;
+    TextView halo, seeMore;
+    FirebaseAuth mAuth;
     Button join1, join2;
 
     ImageView home;
@@ -31,7 +34,9 @@ public class Community1 extends AppCompatActivity implements View.OnClickListene
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_community1);
 
+        mAuth = FirebaseAuth.getInstance();
 
+        halo = findViewById(R.id.halo);
         seeMore = findViewById(R.id.seeMore);
         join1 = findViewById(R.id.join);
         join2 = findViewById(R.id.join2);
@@ -50,6 +55,14 @@ public class Community1 extends AppCompatActivity implements View.OnClickListene
         community1.setOnClickListener(this);
         community2.setOnClickListener(this);
         home.setOnClickListener(view -> this.finish());
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            String name = user.getDisplayName();
+            if (name != null) {
+                halo.setText("Halo, " + name + "!");
+            }
+        }
 
     }
 

@@ -86,8 +86,6 @@ public class LoginForm extends AppCompatActivity {
             }
         });
 
-        mAuth = FirebaseAuth.getInstance();
-
         loginGoogle = findViewById(R.id.loginGoogle);
         FirebaseApp.initializeApp(this);
 
