@@ -36,7 +36,6 @@ public class VideoAdapter extends RecyclerView.Adapter <VideoAdapter.VideoViewHo
 
     @Override
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
-
         holder.setVideoData(videoList.get(position));
     }
 

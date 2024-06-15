@@ -100,19 +100,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/folower" />
 
-            <ImageView
-                android:id="@+id/vid"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/relvid"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                tools:ignore="MissingConstraints" />
-
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+            />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
     <LinearLayout
         android:id="@+id/linearLayout"

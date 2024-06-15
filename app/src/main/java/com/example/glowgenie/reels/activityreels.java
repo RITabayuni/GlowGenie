@@ -21,6 +21,7 @@ public class activityreels extends AppCompatActivity {
     private List<Video> videoList;
     private VideoAdapter adapter;
     private ImageView profil;
+    private ImageView share;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +49,18 @@ public class activityreels extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        share = findViewById(R.id.share);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activityreels.this, sharebutton.class);
+                String nama = videoList.get(viewPager2.getCurrentItem()).getTitle();
+                intent.putExtra("nama", nama);
+                startActivity(intent);
+            }
+        });
+
 
         final ImageView flImageView = findViewById(R.id.fl);
         final ImageView fybImageView = findViewById(R.id.fyb);

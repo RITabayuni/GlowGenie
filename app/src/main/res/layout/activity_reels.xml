@@ -105,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:src="@drawable/home" />
+            android:src="@drawable/relhome" />
 
         <ImageView
             android:id="@+id/shop"
@@ -113,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:src="@drawable/shop" />
+            android:src="@drawable/relshop" />
 
         <ImageView
             android:id="@+id/rels"
@@ -121,7 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:src="@drawable/reels" />
+            android:src="@drawable/relreels" />
 
         <ImageView
             android:id="@+id/message"
@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:src="@drawable/message" />
+            android:src="@drawable/relmessage" />
 
         <ImageView
             android:id="@+id/pr"
@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:src="@drawable/profile" />
+            android:src="@drawable/relprofile" />
 
     </LinearLayout>
 
@@ -176,7 +176,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="8dp"
-            android:src="@drawable/comment"
+            android:src="@drawable/relcomment"
             tools:ignore="MissingConstraints" />
 
         <ImageView
